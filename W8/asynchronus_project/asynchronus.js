@@ -56,3 +56,21 @@ const Noodles = new Dog();
 // console.log(Noodles.chase(Markov));
 // console.log(Noodles.chase.call(Markov, Noodles));
 console.log(Noodles.chase.apply(Markov, [Noodles]));
+
+
+
+class Function {
+    constructor() {
+        this.color = "Red"; 
+        this.handleFunction = this.handleFunction.bind(this); 
+    }
+
+
+    handleFunction() {
+        console.log(this.color)
+    }
+
+    handleOtherFunction() {
+        this.handleFunction()
+    }
+}
